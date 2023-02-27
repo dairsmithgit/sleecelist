@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "graphql": "graphql-codegen --config graphql.config.json"
   },
   "dependencies": {
     "@apollo/client": "^3.7.9",
