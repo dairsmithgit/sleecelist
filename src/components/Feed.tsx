@@ -3,7 +3,7 @@ import Card from "./Card";
 
 function Feed() {
   return (
-    <Flex>
+    <Flex justifyContent="space-evenly" flexWrap="wrap" h="100%">
       <Card />
       <Card />
       <Card />

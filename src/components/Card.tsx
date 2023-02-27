@@ -1,10 +1,30 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex, Text, Image } from "@chakra-ui/react";
 
 function Card() {
   return (
-    <Box border="1px solid white" borderRadius={4} m="1" p="1">
-      info about anime here
-    </Box>
+    <Flex
+      flexDirection="column"
+      border="2px"
+      borderColor="gray.100"
+      borderRadius="md"
+      m="2"
+      p="1"
+      w="20%"
+      _hover={{ borderColor: "blue.400" }}
+    >
+      <Box>
+        <Text>Anime Title - English</Text>
+        <Text>Anime Title - Native</Text>
+      </Box>
+      <Flex justifyContent="space-between">
+        <Text>Anime Studio</Text>
+        <Text>Rating</Text>
+      </Flex>
+      <Image h="200px" w="100%" />
+      <Box>
+        <Text>Description</Text>
+      </Box>
+    </Flex>
   );
 }
 
