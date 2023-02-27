@@ -1,4 +1,12 @@
-import { Link, Flex, Box, Text, Spacer, useMediaQuery } from "@chakra-ui/react";
+import {
+  Link,
+  Flex,
+  Box,
+  Heading,
+  Text,
+  Spacer,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import NavMenu from "./NavMenu";
 import NavMenuMobile from "./NavMenuMobile";
 
@@ -9,12 +17,16 @@ function Navbar() {
     <Flex p="2" borderBottom="1px" borderColor="gray.100">
       <Box color="blue.400" fontWeight="bold">
         <Link href="/" _hover={{ textDecoration: "none", color: "blue.200" }}>
-          <Text fontSize="2xl">SleeceList</Text>
-          <Text fontSize="sm">アニメ一覧</Text>
+          <Heading fontSize="2xl">SleeceList</Heading>
+          <Heading fontFamily="noto-serif-jp" fontSize="sm">
+            アニメ一覧
+          </Heading>
         </Link>
       </Box>
       <Spacer />
-      <Flex gap={2}>{isLargerThan800 ? <NavMenu /> : <NavMenuMobile />}</Flex>
+      <Flex alignItems="center" gap={2}>
+        {isLargerThan800 ? <NavMenu /> : <NavMenuMobile />}
+      </Flex>
     </Flex>
   );
 }
