@@ -7,6 +7,7 @@ import {
   Spacer,
   useMediaQuery,
 } from "@chakra-ui/react";
+import ColorToggle from "./ColorToggle";
 import NavMenu from "./NavMenu";
 import NavMenuMobile from "./NavMenuMobile";
 
@@ -25,6 +26,7 @@ function Navbar() {
       </Box>
       <Spacer />
       <Flex alignItems="center" gap={2}>
+        <ColorToggle />
         {isLargerThan800 ? <NavMenu /> : <NavMenuMobile />}
       </Flex>
     </Flex>
