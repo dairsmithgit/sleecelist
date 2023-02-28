@@ -14,7 +14,6 @@ function Card({ anime }: Anime) {
       borderColor="gray.100"
       borderRadius="md"
       m="2"
-      p="1"
       w="20%"
       _hover={{ borderColor: "blue.400" }}
     >
@@ -31,8 +30,12 @@ function Card({ anime }: Anime) {
           </Text>
           <Text>{anime.averageScore}</Text>
         </Flex>
-        <Box display="flex" justifyContent="center" overflow="hidden">
-          <Image src={anime.coverImage?.large} alt="cover image for anime" />
+        <Box w="100%" overflow="hidden">
+          <Image
+            src={anime.coverImage?.large}
+            alt="cover image for anime"
+            w="100%"
+          />
         </Box>
         <Box>
           <Text>{anime.description?.substring(0, 100)}...</Text>
