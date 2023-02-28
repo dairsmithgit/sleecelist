@@ -18,11 +18,11 @@ function Card({ anime }: Anime) {
       _hover={{ borderColor: "blue.400" }}
     >
       <Link as={NavLink} to="/details" _hover={{ textDecoration: "none" }}>
-        <Box>
+        <Box p={1}>
           <Text>{anime.title?.romaji}</Text>
           <Text>{anime.title?.native}</Text>
         </Box>
-        <Flex justifyContent="space-between">
+        <Flex justifyContent="space-between" p={1}>
           <Text>
             {anime.episodes === 1
               ? `${anime.episodes} Episode`
@@ -37,8 +37,12 @@ function Card({ anime }: Anime) {
             w="100%"
           />
         </Box>
-        <Box>
-          <Text>{anime.description?.substring(0, 100)}...</Text>
+        <Box p={1}>
+          <Text>
+            {anime.description
+              ?.replaceAll(/(<([^>]+)>)/gi, "")
+              .substring(0, 400) + "..."}
+          </Text>
         </Box>
       </Link>
     </Flex>

@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { useQuery } from "@apollo/client";
 
 import Card from "./Card";
@@ -10,15 +10,18 @@ function Feed() {
   console.log(data);
 
   return (
-    <Flex justifyContent="space-evenly" flexWrap="wrap" h="100%">
+    <Flex flexDirection="column" p={2}>
+      <Heading>Popular</Heading>
       {loading ? (
         <Text>Anime is loading...</Text>
       ) : error ? (
         <Text>{error.message}</Text>
       ) : (
-        data.Page.media.map((anime: Media) => (
-          <Card key={anime.id} anime={anime} />
-        ))
+        <Flex justifyContent="space-evenly" flexWrap="wrap" h="100%">
+          {data.Page.media.map((anime: Media) => (
+            <Card key={anime.id} anime={anime} />
+          ))}
+        </Flex>
       )}
     </Flex>
   );

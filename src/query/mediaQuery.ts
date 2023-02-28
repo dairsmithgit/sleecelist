@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const GET_MEDIA_TEST = gql(/* GraphQL */ `
   query {
-    Page(page: 1, perPage: 16) {
+    Page(page: 1, perPage: 20) {
       media(
         season: FALL
         seasonYear: 2022
