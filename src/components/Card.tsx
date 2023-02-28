@@ -1,11 +1,12 @@
 import { Link, Box, Flex, Text, Image } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
+import { Media } from "../generated/anilist-graphql";
 
-const anime = {
-  id: 123,
-};
+interface Anime {
+  anime: Media;
+}
 
-function Card() {
+function Card({ anime }: Anime) {
   return (
     <Flex
       flexDirection="column"
@@ -19,16 +20,22 @@ function Card() {
     >
       <Link as={NavLink} to="/details" _hover={{ textDecoration: "none" }}>
         <Box>
-          <Text>Anime Title - English</Text>
-          <Text>Anime Title - Native</Text>
+          <Text>{anime.title?.romaji}</Text>
+          <Text>{anime.title?.native}</Text>
         </Box>
         <Flex justifyContent="space-between">
-          <Text>Anime Studio</Text>
-          <Text>Rating</Text>
+          <Text>
+            {anime.episodes === 1
+              ? `${anime.episodes} Episode`
+              : `${anime.episodes} Episodes`}
+          </Text>
+          <Text>{anime.averageScore}</Text>
         </Flex>
-        <Image h="200px" w="100%" />
+        <Box display="flex" justifyContent="center" overflow="hidden">
+          <Image src={anime.coverImage?.large} alt="cover image for anime" />
+        </Box>
         <Box>
-          <Text>Description</Text>
+          <Text>{anime.description?.substring(0, 100)}...</Text>
         </Box>
       </Link>
     </Flex>

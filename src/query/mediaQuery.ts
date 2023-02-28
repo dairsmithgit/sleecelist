@@ -12,10 +12,12 @@ export const GET_MEDIA_TEST = gql(/* GraphQL */ `
       ) {
         title {
           romaji
-          english
+          native
         }
+        episodes
+        averageScore
         id
-        description(asHtml: true)
+        description(asHtml: false)
         popularity
         coverImage {
           large

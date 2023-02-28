@@ -16,9 +16,9 @@ function Feed() {
       ) : error ? (
         <Text>{error.message}</Text>
       ) : (
-        data.Page.media.map((anime: Media) => {
-          <Box>{anime.title?.romaji}</Box>;
-        })
+        data.Page.media.map((anime: Media) => (
+          <Card key={anime.id} anime={anime} />
+        ))
       )}
     </Flex>
   );
