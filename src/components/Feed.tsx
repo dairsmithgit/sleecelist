@@ -11,7 +11,7 @@ function Feed() {
 
   return (
     <Flex flexDirection="column" p={2}>
-      <Heading>Popular</Heading>
+      <Heading pb={1}>Popular</Heading>
       {loading ? (
         <Text>Anime is loading...</Text>
       ) : error ? (

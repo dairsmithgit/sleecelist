@@ -14,7 +14,7 @@ function Card({ anime }: Anime) {
       borderColor="gray.100"
       borderRadius="md"
       m="2"
-      w="20%"
+      w="xs"
       _hover={{ borderColor: "blue.400" }}
     >
       <Link as={NavLink} to="/details" _hover={{ textDecoration: "none" }}>
