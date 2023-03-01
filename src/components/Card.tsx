@@ -7,6 +7,25 @@ interface Anime {
 }
 
 function Card({ anime }: Anime) {
+  let animeScore = anime.averageScore!;
+  let scoreColor = "purple.500";
+
+  if (animeScore <= 95) {
+    scoreColor = "green.600";
+  }
+  if (animeScore <= 85) {
+    scoreColor = "green.200";
+  }
+  if (animeScore <= 75) {
+    scoreColor = "yellow.300";
+  }
+  if (animeScore <= 60) {
+    scoreColor = "orange.400";
+  }
+  if (animeScore <= 50) {
+    scoreColor = "red.500";
+  }
+
   return (
     <Flex
       flexDirection="column"
@@ -28,7 +47,9 @@ function Card({ anime }: Anime) {
               ? `${anime.episodes} Episode`
               : `${anime.episodes} Episodes`}
           </Text>
-          <Text>{anime.averageScore}</Text>
+          <Text backgroundColor={scoreColor} paddingX={1} fontWeight="bold">
+            {anime.averageScore}
+          </Text>
         </Flex>
         <Box w="100%" overflow="hidden">
           <Image
