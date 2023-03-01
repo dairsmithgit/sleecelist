@@ -10,7 +10,7 @@ function Card({ anime }: Anime) {
   let animeScore = anime.averageScore!;
   let scoreColor = "purple.500";
 
-  if (animeScore <= 95) {
+  if (animeScore < 90) {
     scoreColor = "green.600";
   }
   if (animeScore <= 85) {
