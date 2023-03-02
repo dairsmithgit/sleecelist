@@ -24,13 +24,34 @@ export const GET_MEDIA_TEST = gql(/* GraphQL */ `
           medium
           color
         }
+        characters {
+          nodes {
+            name {
+              first
+              middle
+              last
+              full
+              native
+              userPreferred
+            }
+            age
+            image {
+              large
+              medium
+            }
+          }
+          studios {
+            nodes {
+              name
+            }
+          }
       }
     }
   }
 `);
 
 export const GET_ANIME_DETAILS = gql(/* GraphQL */ `
-  query AnimeDetails($animeId: String!) {
+  query GetAnimeDetails($animeId: Int!) {
     Media(id: $animeId) {
       title {
         romaji

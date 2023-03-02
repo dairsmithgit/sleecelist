@@ -1,22 +1,21 @@
 import { useQuery } from "@apollo/client";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
+import { Media } from "../generated/anilist-graphql";
 import { GET_ANIME_DETAILS } from "../query/mediaQuery";
 
 function AnimeDetails() {
-  let animeId = useParams();
+  // const { loading, error, data } = useQuery(GET_ANIME_DETAILS, {
+  //   // variables: { animeId },
+  // });
 
-  console.log(animeId);
-
-  const { loading, error, data } = useQuery(GET_ANIME_DETAILS, {
-    variables: { animeId },
-  });
-
-  if (loading) return <>nothing</>;
-
-  if (error) return <>`Error! ${error.message}`</>;
-
-  return <Flex>{data.Media.title}</Flex>;
+  return (
+    <Flex>
+      {anime.characters?.nodes?.map((character) => (
+        <Text>{character?.name?.full}</Text>
+      ))}
+    </Flex>
+  );
 }
 
 export default AnimeDetails;
