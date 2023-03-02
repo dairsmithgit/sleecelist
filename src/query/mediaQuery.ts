@@ -28,3 +28,46 @@ export const GET_MEDIA_TEST = gql(/* GraphQL */ `
     }
   }
 `);
+
+export const GET_ANIME_DETAILS = gql(/* GraphQL */ `
+  query AnimeDetails($animeId: String!) {
+    Media(id: $animeId) {
+      title {
+        romaji
+        native
+      }
+      episodes
+      averageScore
+      description(asHtml: false)
+      popularity
+      coverImage {
+        large
+        medium
+        color
+      }
+      characters {
+        nodes {
+          name {
+            first
+            middle
+            last
+            full
+            native
+            userPreferred
+          }
+          age
+          image {
+            large
+            medium
+          }
+        }
+      }
+      id
+      studios {
+        nodes {
+          name
+        }
+      }
+    }
+  }
+`);

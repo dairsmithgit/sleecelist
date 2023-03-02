@@ -13,7 +13,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Feed />} />
-          <Route path="/details" element={<AnimeDetails />} />
+          <Route path="/details/:id" element={<AnimeDetails />} />
         </Routes>
         <Footer />
       </BrowserRouter>

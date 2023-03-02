@@ -36,7 +36,11 @@ function Card({ anime }: Anime) {
       w="xs"
       _hover={{ borderColor: "blue.400" }}
     >
-      <Link as={NavLink} to="/details" _hover={{ textDecoration: "none" }}>
+      <Link
+        as={NavLink}
+        to={"/details/" + anime.id}
+        _hover={{ textDecoration: "none" }}
+      >
         <Box p={1}>
           <Text>{anime.title?.romaji}</Text>
           <Text>{anime.title?.native}</Text>
@@ -62,7 +66,7 @@ function Card({ anime }: Anime) {
           <Text>
             {anime.description
               ?.replaceAll(/(<([^>]+)>)/gi, "")
-              .substring(0, 400) + "..."}
+              .substring(0, 300) + "..."}
           </Text>
         </Box>
       </Link>
