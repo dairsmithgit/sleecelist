@@ -1,15 +1,18 @@
 import { Link, Box, Flex, Text, Image } from "@chakra-ui/react";
+import { useAtom } from "jotai";
 import { NavLink } from "react-router-dom";
 import { Media } from "../generated/anilist-graphql";
+import { animeAtom } from "../store/store";
 
 interface Anime {
   anime: Media;
 }
 
 function Card({ anime }: Anime) {
+  const [animeDetail, setAnimeDetail] = useAtom(animeAtom);
+
   let animeScore = anime.averageScore!;
   let scoreColor = "purple.500";
-
   if (animeScore < 90) {
     scoreColor = "green.600";
   }
@@ -28,6 +31,7 @@ function Card({ anime }: Anime) {
 
   return (
     <Flex
+      onClick={() => setAnimeDetail(anime)}
       flexDirection="column"
       border="2px"
       borderColor="gray.100"

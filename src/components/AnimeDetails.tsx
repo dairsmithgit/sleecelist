@@ -1,17 +1,20 @@
 import { useQuery } from "@apollo/client";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
+import { useAtom } from "jotai";
+
 import { Media } from "../generated/anilist-graphql";
 import { GET_ANIME_DETAILS } from "../query/mediaQuery";
+import { animeAtom } from "../store/store";
 
 function AnimeDetails() {
+  const [animeDetail, setAnimeDetail] = useAtom(animeAtom);
   // const { loading, error, data } = useQuery(GET_ANIME_DETAILS, {
   //   // variables: { animeId },
   // });
 
   return (
     <Flex>
-      {anime.characters?.nodes?.map((character) => (
+      {animeDetail?.characters?.nodes?.map((character) => (
         <Text>{character?.name?.full}</Text>
       ))}
     </Flex>

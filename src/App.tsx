@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider as JotaiProvider } from "jotai";
 
 import "./App.css";
 import Navbar from "./components/Navbar";
@@ -10,12 +11,14 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Feed />} />
-          <Route path="/details/:id" element={<AnimeDetails />} />
-        </Routes>
-        <Footer />
+        <JotaiProvider>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Feed />} />
+            <Route path="/details/:id" element={<AnimeDetails />} />
+          </Routes>
+          <Footer />
+        </JotaiProvider>
       </BrowserRouter>
     </div>
   );

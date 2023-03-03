@@ -4,10 +4,17 @@ import { useQuery } from "@apollo/client";
 import Card from "./Card";
 import { GET_MEDIA_TEST } from "../query/mediaQuery";
 import type { Media } from "../generated/anilist-graphql";
+import { useAtom } from "jotai";
+import { animeAtom, animesAtom } from "../store/store";
+import { useEffect } from "react";
 
 function Feed() {
+  const [animes, setAnimes] = useAtom(animesAtom);
   const { loading, error, data } = useQuery(GET_MEDIA_TEST);
-  console.log(data);
+  if (data) {
+    setAnimes(data.Page.media);
+  }
+  console.log(animes);
 
   return (
     <Flex flexDirection="column" p={2}>
