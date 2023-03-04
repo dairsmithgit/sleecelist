@@ -1,22 +1,21 @@
-import { useQuery } from "@apollo/client";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text, Image } from "@chakra-ui/react";
 import { useAtom } from "jotai";
 
-import { Media } from "../generated/anilist-graphql";
-import { GET_ANIME_DETAILS } from "../query/mediaQuery";
 import { animeAtom } from "../store/store";
+import DetailsCharacter from "./DetailsCharacter";
 
 function AnimeDetails() {
   const [animeDetail, setAnimeDetail] = useAtom(animeAtom);
-  // const { loading, error, data } = useQuery(GET_ANIME_DETAILS, {
-  //   // variables: { animeId },
-  // });
 
   return (
-    <Flex>
-      {animeDetail?.characters?.nodes?.map((character) => (
-        <Text>{character?.name?.full}</Text>
-      ))}
+    <Flex wrap="wrap">
+      <Box>
+        {animeDetail?.characters?.nodes?.map((character) => (
+          <Box m={2} key={character?.id}>
+            <DetailsCharacter character={character} />
+          </Box>
+        ))}
+      </Box>
     </Flex>
   );
 }

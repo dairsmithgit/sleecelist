@@ -5,3 +5,4 @@ import { Media } from "../generated/anilist-graphql";
 
 export const animeAtom = atom<Media | null>(null);
 export const animesAtom = atom<Media[]>([]);
+export const animesListAtom = atom<Media[]>([]);
