@@ -15,7 +15,16 @@ function Navbar() {
   const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
 
   return (
-    <Flex p="2" borderBottom="1px" borderColor="gray.100">
+    <Flex
+      position="fixed"
+      top="0"
+      left="0"
+      w="100%"
+      p="2"
+      backgroundColor="gray.800"
+      borderBottom="1px"
+      borderColor="gray.100"
+    >
       <Box color="blue.400" fontWeight="bold">
         <Link href="/" _hover={{ textDecoration: "none", color: "blue.200" }}>
           <Heading fontSize="2xl">SleeceList</Heading>

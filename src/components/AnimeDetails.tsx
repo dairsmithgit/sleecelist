@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Image } from "@chakra-ui/react";
+import { Box, Flex, Text, Heading, Image } from "@chakra-ui/react";
 import { useAtom } from "jotai";
 
 import { animeAtom } from "../store/store";
@@ -6,15 +6,20 @@ import DetailsCharacter from "./DetailsCharacter";
 
 function AnimeDetails() {
   const [animeDetail, setAnimeDetail] = useAtom(animeAtom);
+  console.log(animeDetail);
 
   return (
     <Flex wrap="wrap">
+      <Image src={animeDetail?.bannerImage} alt="banner for selected anime" />
       <Box>
-        {animeDetail?.characters?.nodes?.map((character) => (
-          <Box m={2} key={character?.id}>
-            <DetailsCharacter character={character} />
-          </Box>
-        ))}
+        <Heading>Characters</Heading>
+        <Flex wrap="wrap">
+          {animeDetail?.characters?.nodes?.map((character) => (
+            <Box m={2} key={character?.id}>
+              <DetailsCharacter character={character} />
+            </Box>
+          ))}
+        </Flex>
       </Box>
     </Flex>
   );

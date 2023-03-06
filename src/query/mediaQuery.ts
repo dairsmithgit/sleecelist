@@ -19,6 +19,7 @@ export const GET_MEDIA_TEST = gql(/* GraphQL */ `
         id
         description(asHtml: false)
         popularity
+        bannerImage
         coverImage {
           large
           medium
@@ -26,6 +27,7 @@ export const GET_MEDIA_TEST = gql(/* GraphQL */ `
         }
         characters {
           nodes {
+            id
             image {
               large
               medium
@@ -63,6 +65,7 @@ export const GET_ANIME_DETAILS = gql(/* GraphQL */ `
       }
       characters {
         nodes {
+          id
           name {
             first
             middle

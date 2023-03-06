@@ -10,16 +10,18 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <JotaiProvider>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Feed />} />
-            <Route path="/details/:id" element={<AnimeDetails />} />
-          </Routes>
-          <Footer />
-        </JotaiProvider>
-      </BrowserRouter>
+      <JotaiProvider>
+        <Navbar />
+        <div className="main">
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Feed />} />
+              <Route path="/details/:id" element={<AnimeDetails />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
+        <Footer />
+      </JotaiProvider>
     </div>
   );
 }
