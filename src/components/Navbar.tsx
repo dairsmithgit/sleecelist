@@ -25,9 +25,9 @@ function Navbar() {
       borderBottom="1px"
       borderColor="gray.100"
     >
-      <Box color="blue.400" fontWeight="bold">
+      <Box color="blue.400">
         <Link href="/" _hover={{ textDecoration: "none", color: "blue.200" }}>
-          <Heading fontSize="2xl">SleeceList</Heading>
+          <Heading>SleeceList</Heading>
           <Heading fontFamily="noto-serif-jp" fontSize="sm">
             アニメ一覧
           </Heading>
