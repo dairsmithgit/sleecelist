@@ -26,20 +26,24 @@ export const GET_MEDIA_TEST = gql(/* GraphQL */ `
           color
         }
         characters {
-          nodes {
-            id
-            image {
-              large
-              medium
+          edges {
+            role
+            node {
+              id
+              name {
+                first
+                middle
+                last
+                full
+                native
+                userPreferred
+              }
+              image {
+                large
+                medium
+              }
+              age
             }
-            name {
-              first
-              last
-              full
-              native
-              userPreferred
-            }
-            age
           }
         }
       }

@@ -5,7 +5,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 import App from "./App";
 import "./index.css";
-import "@fontsource/lato";
+import "@fontsource/lato/900.css";
 import "@fontsource/noto-sans";
 import theme from "./lib/theme";
 

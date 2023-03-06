@@ -11,11 +11,11 @@ function AnimeDetails() {
   return (
     <Flex wrap="wrap">
       <Image src={animeDetail?.bannerImage} alt="banner for selected anime" />
-      <Box>
+      <Box p={2}>
         <Heading>Characters</Heading>
         <Flex wrap="wrap">
-          {animeDetail?.characters?.nodes?.map((character) => (
-            <Box m={2} key={character?.id}>
+          {animeDetail?.characters?.edges?.map((character) => (
+            <Box m={2} key={character?.node?.id}>
               <DetailsCharacter character={character} />
             </Box>
           ))}
