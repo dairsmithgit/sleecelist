@@ -25,7 +25,7 @@ function Navbar() {
       borderBottom="1px"
       borderColor="gray.100"
     >
-      <Box color="blue.400">
+      <Box>
         <Link href="/" _hover={{ textDecoration: "none", color: "blue.200" }}>
           <Heading>SleeceList</Heading>
           <Heading fontFamily="noto-serif-jp" fontSize="sm">
