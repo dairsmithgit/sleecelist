@@ -25,6 +25,12 @@ export const GET_MEDIA_TEST = gql(/* GraphQL */ `
           medium
           color
         }
+        studios {
+          nodes {
+            name
+            siteUrl
+          }
+        }
         characters {
           edges {
             role
