@@ -16,6 +16,11 @@ export const GET_MEDIA_TEST = gql(/* GraphQL */ `
         }
         episodes
         averageScore
+        startDate {
+          year
+          month
+          day
+        }
         id
         description(asHtml: false)
         popularity
