@@ -4,25 +4,34 @@ import { FiCode, FiHome, FiList, FiMenu, FiSearch } from "react-icons/fi";
 function NavMenu() {
   return (
     <Box>
-      <Flex gap={2}>
-        <Link href="/" _hover={{ textDecoration: "none" }}>
+      <Flex gap={2} transition="all 1s ease-in-out">
+        <Link
+          href="/"
+          _hover={{ textDecoration: "none", transform: "scale(1.1)" }}
+        >
           <IconButton aria-label="Go to home page" icon={<FiHome />}>
             Home
           </IconButton>
         </Link>
-        <Link href="/list" _hover={{ textDecoration: "none" }}>
+        <Link
+          href="/list"
+          _hover={{ textDecoration: "none", transform: "scale(1.1)" }}
+        >
           <IconButton aria-label="Go to anime list" icon={<FiList />}>
             List
           </IconButton>
         </Link>
-        <Link href="/search" _hover={{ textDecoration: "none" }}>
+        <Link
+          href="/search"
+          _hover={{ textDecoration: "none", transform: "scale(1.1)" }}
+        >
           <IconButton aria-label="Go to search page" icon={<FiSearch />}>
             Search
           </IconButton>
         </Link>
         <Link
           href="https://github.com/dairsmithgit/sleecelist"
-          _hover={{ textDecoration: "none" }}
+          _hover={{ textDecoration: "none", transform: "scale(1.1)" }}
           isExternal
         >
           <IconButton aria-label="Go to source code" icon={<FiCode />}>
