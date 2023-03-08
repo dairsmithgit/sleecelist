@@ -1,7 +1,28 @@
-import { Box } from "@chakra-ui/react";
+import { Box, IconButton } from "@chakra-ui/react";
+import { FiPlus } from "react-icons/fi";
+import { useAtom } from "jotai";
 
-function AnimeAction() {
-  return <Box>add anime to list button</Box>;
+import { animesListAtom } from "../store/store";
+import { Media } from "../generated/anilist-graphql";
+
+interface Anime {
+  anime: Media;
+}
+
+function AnimeAction({ anime }: Anime) {
+  const [animeList, setAnimeList] = useAtom(animesListAtom);
+
+  console.log(animeList);
+
+  return (
+    <IconButton
+      aria-label="Add anime to the anime list"
+      icon={<FiPlus />}
+      onClick={() => setAnimeList([...animeList, anime])}
+    >
+      Add to list
+    </IconButton>
+  );
 }
 
 export default AnimeAction;

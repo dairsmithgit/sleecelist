@@ -2,6 +2,7 @@ import { Box, Flex, Text, Heading, Image } from "@chakra-ui/react";
 import { useAtom } from "jotai";
 
 import { animeAtom } from "../store/store";
+import AnimeAction from "./AnimeAction";
 import DetailsCharacter from "./DetailsCharacter";
 import DetailsGeneral from "./DetailsGeneral";
 
@@ -13,7 +14,10 @@ function AnimeDetails() {
     <Flex wrap="wrap">
       <Image src={animeDetail?.bannerImage} alt="banner for selected anime" />
       <Box p={2}>
-        <Heading>{animeDetail?.title?.romaji}</Heading>
+        <Flex>
+          <Heading>{animeDetail?.title?.romaji}</Heading>
+          <AnimeAction anime={animeDetail} />
+        </Flex>
         <DetailsGeneral anime={animeDetail} />
       </Box>
       <Box p={2}>
