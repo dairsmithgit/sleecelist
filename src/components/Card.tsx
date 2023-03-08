@@ -1,4 +1,11 @@
-import { Link, Box, Flex, Text, Image } from "@chakra-ui/react";
+import {
+  Link,
+  Box,
+  Flex,
+  Text,
+  Image,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { useAtom } from "jotai";
 import { NavLink } from "react-router-dom";
 import { Media } from "../generated/anilist-graphql";
@@ -33,8 +40,8 @@ function Card({ anime }: Anime) {
     <Flex
       onClick={() => setAnimeDetail(anime)}
       flexDirection="column"
-      border="2px"
-      borderColor="gray.100"
+      border="1px"
+      borderColor={useColorModeValue("gray.800", "gray.100")}
       borderRadius="md"
       m="2"
       w="xs"
@@ -70,7 +77,7 @@ function Card({ anime }: Anime) {
           <Text>
             {anime.description
               ?.replaceAll(/(<([^>]+)>)/gi, "")
-              .substring(0, 300) + "..."}
+              .substring(0, 200) + "..."}
           </Text>
         </Box>
       </Link>

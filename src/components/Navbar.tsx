@@ -6,6 +6,7 @@ import {
   Text,
   Spacer,
   useMediaQuery,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import ColorToggle from "./ColorToggle";
 import NavMenu from "./NavMenu";
@@ -17,13 +18,12 @@ function Navbar() {
   return (
     <Flex
       position="fixed"
-      top="0"
-      left="0"
       w="100%"
-      p="2"
-      backgroundColor="gray.800"
+      p="1"
+      bg={useColorModeValue("#F7FAFC40", "#1A202C80")}
+      css={{ backdropFilter: "blur(10px)" }}
       borderBottom="1px"
-      borderColor="gray.100"
+      borderColor={useColorModeValue("gray.800", "gray.100")}
     >
       <Box>
         <Link href="/" _hover={{ textDecoration: "none", color: "blue.200" }}>

@@ -10,7 +10,9 @@ function DetailsGeneral({ anime }: Anime) {
     <Flex>
       <Image src={anime?.coverImage?.large} alt="cover image for anime" />
       <Box m={2} w="50%">
-        <Text mb={2}>{anime?.description}</Text>
+        <Text mb={2}>
+          {anime?.description?.replaceAll(/(<([^>]+)>)/gi, "")}
+        </Text>
         <Text mb={2}>{anime?.episodes} Episodes</Text>
         <Text mb={2}>
           First episode date:&nbsp;{anime?.startDate?.year}/

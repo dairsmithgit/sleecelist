@@ -6,20 +6,21 @@ import Navbar from "./components/Navbar";
 import Feed from "./components/Feed";
 import AnimeDetails from "./components/AnimeDetails";
 import Footer from "./components/Footer";
+import { Box } from "@chakra-ui/react";
 
 function App() {
   return (
     <div className="App">
       <JotaiProvider>
         <Navbar />
-        <div className="main">
+        <Box pt="62px">
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Feed />} />
               <Route path="/details/:id" element={<AnimeDetails />} />
             </Routes>
           </BrowserRouter>
-        </div>
+        </Box>
         <Footer />
       </JotaiProvider>
     </div>
