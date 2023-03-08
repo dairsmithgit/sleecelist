@@ -77,7 +77,7 @@ function Card({ anime }: Anime) {
           <Text>
             {anime.description
               ?.replaceAll(/(<([^>]+)>)/gi, "")
-              .substring(0, 200) + "..."}
+              .substring(0, 100) + "..."}
           </Text>
         </Box>
       </Link>
