@@ -101,6 +101,7 @@ function Card({ anime }: Anime) {
           )}
         </Box>
         <IconButton
+          size="sm"
           aria-label="Show anime description"
           icon={<FaAngleDown />}
           onClick={() => setDescClick(!descClick)}
