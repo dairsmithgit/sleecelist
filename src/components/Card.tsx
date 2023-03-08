@@ -5,9 +5,13 @@ import {
   Text,
   Image,
   useColorModeValue,
+  IconButton,
 } from "@chakra-ui/react";
 import { useAtom } from "jotai";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { FaAngleDown } from "react-icons/fa";
+
 import { Media } from "../generated/anilist-graphql";
 import { animeAtom } from "../store/store";
 
@@ -17,6 +21,8 @@ interface Anime {
 
 function Card({ anime }: Anime) {
   const [animeDetail, setAnimeDetail] = useAtom(animeAtom);
+
+  const [descClick, setDescClick] = useState(false);
 
   let animeScore = anime.averageScore!;
   let scoreColor = "purple.500";
@@ -38,7 +44,6 @@ function Card({ anime }: Anime) {
 
   return (
     <Flex
-      onClick={() => setAnimeDetail(anime)}
       flexDirection="column"
       border="1px"
       borderColor={useColorModeValue("gray.800", "gray.100")}
@@ -48,39 +53,61 @@ function Card({ anime }: Anime) {
       _hover={{ borderColor: "blue.400" }}
     >
       <Link
+        onClick={() => setAnimeDetail(anime)}
         as={NavLink}
         to={"/details/" + anime.id}
         _hover={{ textDecoration: "none" }}
       >
         <Box p={1}>
-          <Text>{anime.title?.romaji}</Text>
-          <Text>{anime.title?.native}</Text>
+          <Text noOfLines={1}>{anime.title?.romaji}</Text>
+          <Text noOfLines={1}>{anime.title?.native}</Text>
         </Box>
-        <Flex justifyContent="space-between" p={1}>
-          <Text>
-            {anime.episodes === 1
-              ? `${anime.episodes} Episode`
-              : `${anime.episodes} Episodes`}
-          </Text>
-          <Text backgroundColor={scoreColor} paddingX={1} fontWeight="bold">
-            {anime.averageScore}
-          </Text>
-        </Flex>
+      </Link>
+      <Flex justifyContent="space-between" p={1}>
+        <Text>
+          {anime.episodes === 1
+            ? `${anime.episodes} Episode`
+            : `${anime.episodes} Episodes`}
+        </Text>
+        <Text backgroundColor={scoreColor} paddingX={1} fontWeight="bold">
+          {anime.averageScore}
+        </Text>
+      </Flex>
+      <Link
+        onClick={() => setAnimeDetail(anime)}
+        as={NavLink}
+        to={"/details/" + anime.id}
+        _hover={{ textDecoration: "none" }}
+      >
         <Box w="100%" overflow="hidden">
           <Image
             src={anime.coverImage?.large}
             alt="cover image for anime"
             w="100%"
+            maxHeight="450px"
           />
         </Box>
-        <Box p={1}>
-          <Text>
-            {anime.description
-              ?.replaceAll(/(<([^>]+)>)/gi, "")
-              .substring(0, 100) + "..."}
-          </Text>
-        </Box>
       </Link>
+      <Flex p={1} justifyContent="space-between">
+        <Box m={1}>
+          {!descClick ? (
+            <Text noOfLines={3}>
+              {anime.description?.replaceAll(/(<([^>]+)>)/gi, "")}
+            </Text>
+          ) : (
+            <Text noOfLines={3} overflow="scroll">
+              {anime.description?.replaceAll(/(<([^>]+)>)/gi, "")}
+            </Text>
+          )}
+        </Box>
+        <IconButton
+          aria-label="Show anime description"
+          icon={<FaAngleDown />}
+          onClick={() => setDescClick(!descClick)}
+        >
+          Show Description
+        </IconButton>
+      </Flex>
     </Flex>
   );
 }
