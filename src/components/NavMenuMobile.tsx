@@ -1,33 +1,37 @@
 import {
   IconButton,
-  Link,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
 import { FiCode, FiHome, FiList, FiMenu, FiSearch } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const NavMenuMobile = () => {
   return (
     <Menu>
       <MenuButton as={IconButton} icon={<FiMenu />} variant="outlined" />
       <MenuList>
-        <Link href="/" _hover={{ textDecoration: "none" }}>
-          <MenuItem icon={<FiHome />}>Home</MenuItem>
+        <Link to="/">
+          <MenuItem icon={<FiHome />} _hover={{ textDecoration: "none" }}>
+            Home
+          </MenuItem>
         </Link>
-        <Link href="/list" _hover={{ textDecoration: "none" }}>
-          <MenuItem icon={<FiList />}>List</MenuItem>
+        <Link to="/list">
+          <MenuItem icon={<FiList />} _hover={{ textDecoration: "none" }}>
+            List
+          </MenuItem>
         </Link>
-        <Link href="/search" _hover={{ textDecoration: "none" }}>
-          <MenuItem icon={<FiSearch />}>Search</MenuItem>
+        <Link to="/search">
+          <MenuItem icon={<FiSearch />} _hover={{ textDecoration: "none" }}>
+            Search
+          </MenuItem>
         </Link>
-        <Link
-          href="https://github.com/dairsmithgit/sleecelist"
-          _hover={{ textDecoration: "none" }}
-          isExternal
-        >
-          <MenuItem icon={<FiCode />}>Source</MenuItem>
+        <Link to="https://github.com/dairsmithgit/sleecelist">
+          <MenuItem icon={<FiCode />} _hover={{ textDecoration: "none" }}>
+            Source
+          </MenuItem>
         </Link>
       </MenuList>
     </Menu>

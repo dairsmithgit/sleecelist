@@ -13,17 +13,17 @@ function App() {
   return (
     <div className="App">
       <JotaiProvider>
-        <Navbar />
-        <Box pt="62px">
-          <BrowserRouter>
+        <BrowserRouter>
+          <Navbar />
+          <Box pt="62px">
             <Routes>
               <Route path="/" element={<Feed />} />
               <Route path="/details/:id" element={<AnimeDetails />} />
               <Route path="/list" element={<List />} />
             </Routes>
-          </BrowserRouter>
-        </Box>
-        <Footer />
+          </Box>
+          <Footer />
+        </BrowserRouter>
       </JotaiProvider>
     </div>
   );
