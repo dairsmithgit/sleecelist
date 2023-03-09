@@ -18,6 +18,8 @@ function AnimeAction({ anime }: Anime) {
     <IconButton
       aria-label="Add anime to the anime list"
       icon={<FiPlus />}
+      size="sm"
+      _hover={{ transform: "scale(1.1)" }}
       onClick={() => setAnimeList([...animeList, anime])}
     >
       Add to list

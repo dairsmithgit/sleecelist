@@ -14,7 +14,7 @@ function AnimeDetails() {
     <Flex wrap="wrap">
       <Image src={animeDetail?.bannerImage} alt="banner for selected anime" />
       <Box p={2}>
-        <Flex>
+        <Flex alignItems="center" gap={2}>
           <Heading>{animeDetail?.title?.romaji}</Heading>
           <AnimeAction anime={animeDetail} />
         </Flex>
