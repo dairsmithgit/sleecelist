@@ -5,8 +5,10 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 import App from "./App";
 import "./index.css";
-import "@fontsource/lato/900.css";
+import "@fontsource/lato/300.css";
+import "@fontsource/lato/700.css";
 import "@fontsource/noto-sans";
+import "@fontsource/noto-sans-jp";
 import theme from "./lib/theme";
 
 const client = new ApolloClient({

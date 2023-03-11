@@ -14,6 +14,7 @@ import { FaAngleDown } from "react-icons/fa";
 
 import { Media } from "../generated/anilist-graphql";
 import { animeAtom } from "../store/store";
+import AnimeAction from "./AnimeAction";
 
 interface Anime {
   anime: Media;
@@ -43,26 +44,20 @@ function Card({ anime }: Anime) {
   }
 
   return (
-    <Flex
-      flexDirection="column"
-      border="1px"
-      borderColor={useColorModeValue("gray.800", "gray.100")}
-      borderRadius="md"
-      m="2"
-      w="xs"
-      _hover={{ borderColor: "blue.400" }}
-    >
-      <Link
-        onClick={() => setAnimeDetail(anime)}
-        as={NavLink}
-        to={"/details/" + anime.id}
-        _hover={{ textDecoration: "none" }}
-      >
-        <Box p={1}>
-          <Text noOfLines={1}>{anime.title?.romaji}</Text>
-          <Text noOfLines={1}>{anime.title?.native}</Text>
-        </Box>
-      </Link>
+    <Flex flexDirection="column" border="1px" m="2" w="xs">
+      <Flex p={1} alignItems="center" justifyContent="space-between">
+        <Link
+          onClick={() => setAnimeDetail(anime)}
+          as={NavLink}
+          to={"/details/" + anime.id}
+        >
+          <Box>
+            <Text noOfLines={1}>{anime.title?.romaji}</Text>
+            <Text noOfLines={1}>{anime.title?.native}</Text>
+          </Box>
+        </Link>
+        <AnimeAction anime={anime} />
+      </Flex>
       <Flex justifyContent="space-between" p={1}>
         <Text>
           {anime.episodes === 1
@@ -77,7 +72,6 @@ function Card({ anime }: Anime) {
         onClick={() => setAnimeDetail(anime)}
         as={NavLink}
         to={"/details/" + anime.id}
-        _hover={{ textDecoration: "none" }}
       >
         <Box w="100%" overflow="hidden">
           <Image

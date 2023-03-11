@@ -20,15 +20,15 @@ function Navbar() {
       position="fixed"
       w="100%"
       p="1"
-      bg={useColorModeValue("#F7FAFC40", "#1A202C80")}
+      bg={useColorModeValue("#f5f5f540", "#0f0f0f80")}
       css={{ backdropFilter: "blur(10px)" }}
       borderBottom="1px"
       borderColor={useColorModeValue("gray.800", "gray.100")}
     >
       <Link to="/">
-        <Box _hover={{ textDecoration: "none", color: "blue.200" }}>
+        <Box>
           <Heading>SleeceList</Heading>
-          <Heading fontFamily="noto-serif-jp" fontSize="sm">
+          <Heading fontFamily="noto-sans-jp" fontSize="sm">
             アニメ一覧
           </Heading>
         </Box>
