@@ -22,7 +22,7 @@ function DetailsGeneral({ anime }: Anime) {
           First episode date:&nbsp;{anime?.startDate?.year}/
           {anime?.startDate?.month}/{anime?.startDate?.day}
         </Text>
-        <Flex mb={2}>
+        <Flex mb={2} wrap="wrap">
           <Text>Studio:&nbsp;</Text>
           {anime?.studios?.nodes?.map((studio, index) => (
             <Text>

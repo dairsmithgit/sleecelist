@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, defineStyle, defineStyleConfig } from "@chakra-ui/react";
 import { mode, StyleFunctionProps } from "@chakra-ui/theme-tools";
 
 const styles = {
@@ -23,23 +23,7 @@ const colors = {
   },
 };
 
-const components = {
-  Heading: {
-    variants: {
-      "section-title": {
-        fontSize: 24,
-        marginTop: 3,
-        marginBottom: 4,
-      },
-    },
-  },
-  Link: {
-    baseStyle: (props: StyleFunctionProps | Record<string, any>) => ({
-      color: mode("brand.800", "brand.200")(props),
-      textUnderlineOffset: 3,
-    }),
-  },
-};
+const components = {};
 
 const fonts = {
   heading: `'Lato', sans-serif`,
