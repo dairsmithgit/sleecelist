@@ -8,8 +8,12 @@ interface Anime {
 function DetailsGeneral({ anime }: Anime) {
   return (
     <Flex>
-      <Image src={anime?.coverImage?.large} alt="cover image for anime" />
-      <Box m={2} w="50%">
+      <Image
+        border="1px"
+        src={anime?.coverImage?.large}
+        alt="cover image for anime"
+      />
+      <Box ml={2} p={1} w="60%" border="1px">
         <Text mb={2}>
           {anime?.description?.replaceAll(/(<([^>]+)>)/gi, "")}
         </Text>

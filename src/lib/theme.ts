@@ -26,7 +26,11 @@ const colors = {
 const components = {
   Heading: {
     variants: {
-      "section-title": {},
+      "section-title": {
+        fontSize: 24,
+        marginTop: 3,
+        marginBottom: 4,
+      },
     },
   },
   Link: {
