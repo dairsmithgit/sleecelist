@@ -1,4 +1,4 @@
-import { extendTheme, defineStyle, defineStyleConfig } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
 import { mode, StyleFunctionProps } from "@chakra-ui/theme-tools";
 
 const styles = {
@@ -23,7 +23,30 @@ const colors = {
   },
 };
 
-const components = {};
+const components = {
+  Heading: {
+    variants: {
+      title: {
+        fontSize: 20,
+        _hover: { color: "brand.300" },
+      },
+    },
+  },
+  Button: {
+    variants: {
+      action: {
+        rounded: "none",
+        border: "1px",
+        _hover: { color: "brand.300", transform: "scale(1.1)" },
+      },
+      menu: {
+        rounded: "none",
+        border: "1px",
+        _hover: { color: "brand.300", marginX: 4 },
+      },
+    },
+  },
+};
 
 const fonts = {
   heading: `'Lato', sans-serif`,

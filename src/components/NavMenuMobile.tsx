@@ -14,24 +14,16 @@ const NavMenuMobile = () => {
       <MenuButton as={IconButton} icon={<FiMenu />} variant="outlined" />
       <MenuList>
         <Link to="/">
-          <MenuItem icon={<FiHome />} _hover={{ textDecoration: "none" }}>
-            Home
-          </MenuItem>
+          <MenuItem icon={<FiHome />}>Home</MenuItem>
         </Link>
         <Link to="/list">
-          <MenuItem icon={<FiList />} _hover={{ textDecoration: "none" }}>
-            List
-          </MenuItem>
+          <MenuItem icon={<FiList />}>List</MenuItem>
         </Link>
         <Link to="/search">
-          <MenuItem icon={<FiSearch />} _hover={{ textDecoration: "none" }}>
-            Search
-          </MenuItem>
+          <MenuItem icon={<FiSearch />}>Search</MenuItem>
         </Link>
         <Link to="https://github.com/dairsmithgit/sleecelist">
-          <MenuItem icon={<FiCode />} _hover={{ textDecoration: "none" }}>
-            Source
-          </MenuItem>
+          <MenuItem icon={<FiCode />}>Source</MenuItem>
         </Link>
       </MenuList>
     </Menu>

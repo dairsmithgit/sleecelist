@@ -6,6 +6,7 @@ import {
   Image,
   useColorModeValue,
   IconButton,
+  Heading,
 } from "@chakra-ui/react";
 import { useAtom } from "jotai";
 import { useState } from "react";
@@ -46,16 +47,16 @@ function Card({ anime }: Anime) {
   return (
     <Flex flexDirection="column" border="1px" m="2" w="xs">
       <Flex p={1} alignItems="center" justifyContent="space-between">
-        <Link
-          onClick={() => setAnimeDetail(anime)}
-          as={NavLink}
-          to={"/details/" + anime.id}
-        >
-          <Box>
+        <Heading variant="title">
+          <Link
+            onClick={() => setAnimeDetail(anime)}
+            as={NavLink}
+            to={"/details/" + anime.id}
+          >
             <Text noOfLines={1}>{anime.title?.romaji}</Text>
             <Text noOfLines={1}>{anime.title?.native}</Text>
-          </Box>
-        </Link>
+          </Link>
+        </Heading>
         <AnimeAction anime={anime} />
       </Flex>
       <Flex justifyContent="space-between" p={1}>
@@ -95,6 +96,7 @@ function Card({ anime }: Anime) {
           )}
         </Box>
         <IconButton
+          variant="action"
           size="sm"
           aria-label="Show anime description"
           icon={<FaAngleDown />}

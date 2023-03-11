@@ -1,6 +1,6 @@
 import {
   Flex,
-  Box,
+  Text,
   Heading,
   Spacer,
   useMediaQuery,
@@ -23,15 +23,15 @@ function Navbar() {
       bg={useColorModeValue("#f5f5f540", "#0f0f0f80")}
       css={{ backdropFilter: "blur(10px)" }}
       borderBottom="1px"
-      borderColor={useColorModeValue("gray.800", "gray.100")}
+      borderColor={useColorModeValue("brand.900", "brand.100")}
     >
       <Link to="/">
-        <Box>
-          <Heading>SleeceList</Heading>
-          <Heading fontFamily="noto-sans-jp" fontSize="sm">
+        <Heading _hover={{ color: "brand.300" }}>
+          <Text>SleeceList</Text>
+          <Text fontFamily="noto-sans-jp" fontSize="sm">
             アニメ一覧
-          </Heading>
-        </Box>
+          </Text>
+        </Heading>
       </Link>
 
       <Spacer />

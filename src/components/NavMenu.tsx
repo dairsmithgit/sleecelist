@@ -8,36 +8,36 @@ function NavMenu() {
       <Flex gap={2} transition="all 1s ease-in-out">
         <Link to="/">
           <IconButton
+            variant="menu"
             aria-label="Go to home page"
             icon={<FiHome />}
-            _hover={{ textDecoration: "none", transform: "scale(1.1)" }}
           >
             Home
           </IconButton>
         </Link>
         <Link to="/list">
           <IconButton
+            variant="menu"
             aria-label="Go to anime list"
             icon={<FiList />}
-            _hover={{ textDecoration: "none", transform: "scale(1.1)" }}
           >
             List
           </IconButton>
         </Link>
         <Link to="/search">
           <IconButton
+            variant="menu"
             aria-label="Go to search page"
             icon={<FiSearch />}
-            _hover={{ textDecoration: "none", transform: "scale(1.1)" }}
           >
             Search
           </IconButton>
         </Link>
         <Link to="https://github.com/dairsmithgit/sleecelist">
           <IconButton
+            variant="menu"
             aria-label="Go to source code"
             icon={<FiCode />}
-            _hover={{ textDecoration: "none", transform: "scale(1.1)" }}
           >
             Source
           </IconButton>
