@@ -22,7 +22,7 @@ function AnimeDetails() {
       </Box>
       <Box p={2}>
         <Heading>Characters</Heading>
-        <Flex wrap="wrap">
+        <Flex wrap="wrap" justifyContent="space-evenly">
           {animeDetail?.characters?.edges?.map((character) => (
             <Box m={2} key={character?.node?.id}>
               <DetailsCharacter character={character} />

@@ -37,7 +37,7 @@ const components = {
       action: {
         rounded: "none",
         border: "1px",
-        _hover: { color: "brand.300", transform: "scale(1.1)" },
+        _hover: { color: "brand.300" },
       },
       menu: {
         rounded: "none",

@@ -7,7 +7,7 @@ interface animeCharacter {
 
 function DetailsCharacter({ character }: animeCharacter) {
   return (
-    <Flex border="2px" borderColor="gray.100" borderLeftRadius="md" m="2">
+    <Flex border="1px" m="2">
       <Box p={1}>
         <Heading fontSize="xl">{character?.node?.name?.full}</Heading>
         <Text>{character?.node?.name?.native}</Text>
