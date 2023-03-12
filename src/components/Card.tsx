@@ -57,6 +57,7 @@ function Card({ anime }: Anime) {
             <Text noOfLines={1}>{anime.title?.native}</Text>
           </Link>
         </Heading>
+        <AnimeAction anime={anime} />
       </Flex>
       <Flex justifyContent="space-between" p={1}>
         <Text>

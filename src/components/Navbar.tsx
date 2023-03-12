@@ -18,6 +18,7 @@ function Navbar() {
   return (
     <Flex
       position="fixed"
+      zIndex={999}
       w="100%"
       p="1"
       bg={useColorModeValue("#f5f5f540", "#0f0f0f80")}
