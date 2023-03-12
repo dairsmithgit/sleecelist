@@ -42,7 +42,7 @@ const components = {
       menu: {
         rounded: "none",
         border: "1px",
-        _hover: { color: "brand.300", marginX: 4 },
+        _hover: { color: "brand.300" },
       },
     },
   },

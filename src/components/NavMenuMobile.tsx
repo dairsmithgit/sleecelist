@@ -10,9 +10,9 @@ import { Link } from "react-router-dom";
 
 const NavMenuMobile = () => {
   return (
-    <Menu>
-      <MenuButton as={IconButton} icon={<FiMenu />} variant="outlined" />
-      <MenuList>
+    <Menu closeOnBlur closeOnSelect>
+      <MenuButton as={IconButton} icon={<FiMenu />} variant="menu" />
+      <MenuList border="1px" borderRadius="none">
         <Link to="/">
           <MenuItem icon={<FiHome />}>Home</MenuItem>
         </Link>

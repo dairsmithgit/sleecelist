@@ -16,8 +16,11 @@ function ColorToggle() {
         transition={{ duration: 0.2 }}
       >
         <IconButton
+          border="1px"
+          borderRadius="none"
           aria-label="Toggle theme"
-          colorScheme={useColorModeValue("blue", "orange")}
+          background={useColorModeValue("brand.300", "brand.500")}
+          _hover={{ background: useColorModeValue("brand.400", "brand.600") }}
           icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
           onClick={toggleColorMode}
         ></IconButton>
