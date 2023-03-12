@@ -1,5 +1,5 @@
-import { IconButton, Flex, Box, Button } from "@chakra-ui/react";
-import { FiCode, FiHome, FiList, FiMenu, FiSearch } from "react-icons/fi";
+import { IconButton, Flex, Box } from "@chakra-ui/react";
+import { FiCode, FiHome, FiList, FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 function NavMenu() {

@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Button } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { useAtom } from "jotai";
 
 import { animesListAtom } from "../store/store";

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import Navbar from "./components/Navbar";
@@ -7,7 +7,6 @@ import AnimeDetails from "./components/AnimeDetails";
 import Footer from "./components/Footer";
 import { Box } from "@chakra-ui/react";
 import List from "./components/List";
-import Search from "./components/Search";
 
 function App() {
   return (

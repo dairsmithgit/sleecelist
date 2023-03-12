@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Heading, Image } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image } from "@chakra-ui/react";
 import { useAtom } from "jotai";
 
 import { animeAtom } from "../store/store";

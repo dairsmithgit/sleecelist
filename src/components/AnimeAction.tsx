@@ -1,4 +1,4 @@
-import { Box, IconButton } from "@chakra-ui/react";
+import { IconButton } from "@chakra-ui/react";
 import { FiPlus } from "react-icons/fi";
 import { useAtom } from "jotai";
 

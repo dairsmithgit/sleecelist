@@ -1,12 +1,11 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 import { useQuery } from "@apollo/client";
 
 import Card from "./Card";
 import { GET_MEDIA_TEST } from "../query/mediaQuery";
 import type { Media } from "../generated/anilist-graphql";
 import { useAtom } from "jotai";
-import { animeAtom, animesAtom } from "../store/store";
-import { useEffect } from "react";
+import { animesAtom } from "../store/store";
 
 function Feed() {
   const [animes, setAnimes] = useAtom(animesAtom);
