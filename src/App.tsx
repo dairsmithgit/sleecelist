@@ -7,6 +7,7 @@ import AnimeDetails from "./components/AnimeDetails";
 import Footer from "./components/Footer";
 import { Box } from "@chakra-ui/react";
 import List from "./components/List";
+import Search from "./components/Search";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Feed />} />
           <Route path="/details/:id" element={<AnimeDetails />} />
           <Route path="/list" element={<List />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
       </Box>
       <Footer />

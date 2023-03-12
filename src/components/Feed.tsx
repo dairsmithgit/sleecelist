@@ -1,10 +1,10 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
 import { useQuery } from "@apollo/client";
+import { useAtom } from "jotai";
 
 import Card from "./Card";
 import { GET_MEDIA_TEST } from "../query/mediaQuery";
 import type { Media } from "../generated/anilist-graphql";
-import { useAtom } from "jotai";
 import { animesAtom } from "../store/store";
 
 function Feed() {
