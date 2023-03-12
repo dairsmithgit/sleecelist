@@ -14,7 +14,6 @@ function Feed() {
   if (data) {
     setAnimes(data.Page.media);
   }
-  console.log(animes);
 
   return (
     <Flex flexDirection="column" p={2}>

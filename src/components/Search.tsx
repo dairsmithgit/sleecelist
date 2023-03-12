@@ -2,9 +2,9 @@ import { Box, Text, Input } from "@chakra-ui/react";
 
 function Search() {
   return (
-    <Box>
+    <Box p={2}>
       <Text>Search Anime</Text>
-      <Input placeholder="Name" />
+      <Input placeholder="Name" w="400px" />
     </Box>
   );
 }

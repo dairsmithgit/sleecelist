@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-import ColorToggle from "./ColorToggle";
+import ColorToggle from "./util/ColorToggle";
 import NavMenu from "./NavMenu";
 import NavMenuMobile from "./NavMenuMobile";
 
@@ -20,7 +20,7 @@ function Navbar() {
       position="fixed"
       zIndex={999}
       w="100%"
-      p="1"
+      px="2"
       bg={useColorModeValue("#f5f5f540", "#0f0f0f80")}
       css={{ backdropFilter: "blur(10px)" }}
       borderBottom="1px"

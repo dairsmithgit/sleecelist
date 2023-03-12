@@ -12,8 +12,6 @@ interface Anime {
 function AnimeAction({ anime }: Anime) {
   const [animeList, setAnimeList] = useAtom(animesListAtom);
 
-  console.log(animeList);
-
   return (
     <IconButton
       variant="action"
