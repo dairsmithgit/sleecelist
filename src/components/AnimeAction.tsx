@@ -11,6 +11,7 @@ interface Anime {
 
 function AnimeAction({ anime }: Anime) {
   const [animeList, setAnimeList] = useAtom(animesListAtom);
+  // TODO: do not allow the same anime to be added multiple times
 
   return (
     <IconButton
