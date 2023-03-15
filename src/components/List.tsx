@@ -24,7 +24,7 @@ function List() {
         </Flex>
         <Box mx="auto" my={2} w="50%" border="1px">
           {animeList.map((anime) => (
-            <Flex gap={2} p={1} justifyContent="center">
+            <Flex key={anime.id} gap={2} p={1} justifyContent="center">
               <Text fontWeight="bold">{anime.title?.romaji}</Text>
               <Text>({anime.title?.native})</Text>
             </Flex>
